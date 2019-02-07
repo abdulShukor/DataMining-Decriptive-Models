@@ -1,0 +1,164 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9608753a-1bed-47aa-9095-532224a1d3bc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Time Series Mining Structure</ID>
+  <Name>Time Series Mining Structure</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_vTimeSeries</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7c6db899-2cf5-48db-9f20-bb9b4b1cc765">
+    <DataSourceViewID>Adventure Works DW2012</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e80c12cb-bc18-4fb2-9a77-03c53aacf126">
+      <ID>Amount</ID>
+      <Name>Amount</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8f5f86e7-5a48-4d86-9105-59fa1931d249">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1d2d1f3a-956b-421b-b5c3-683675fd3a80">
+            <TableID>dbo_vTimeSeries</TableID>
+            <ColumnID>Amount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="85584985-c75f-4c67-a1fb-3daca853bcb9">
+      <ID>Model Region</ID>
+      <Name>Model Region</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c531f08f-9eb4-4daa-bc6b-ef0ff5869a78">
+          <DataType>WChar</DataType>
+          <DataSize>56</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="60b28962-9161-41b2-a483-93774074ecf1">
+            <TableID>dbo_vTimeSeries</TableID>
+            <ColumnID>ModelRegion</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e654072b-a75d-4dc8-8e87-1574598cdf30">
+      <ID>Quantity</ID>
+      <Name>Quantity</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dae51330-2d2b-49ec-af0a-6274bb096c32">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="437e51c8-6747-4fc1-8dd1-bbdc1987fb3a">
+            <TableID>dbo_vTimeSeries</TableID>
+            <ColumnID>Quantity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="bbba60b6-bb2a-4cae-b595-c88cbeb8abde">
+      <ID>Time Index</ID>
+      <Name>Time Index</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key Time</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fb072c16-601e-4f2f-91a9-033e72a1fb29">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="901747f7-bc91-476e-93cf-3e62f6563f5e">
+            <TableID>dbo_vTimeSeries</TableID>
+            <ColumnID>TimeIndex</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="1a8826b2-8e8d-4483-91c2-b757fbe789e7">
+      <ID>Time Series Mining Model</ID>
+      <Name>Time Series Mining Model</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Time_Series</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="26a4d2e5-9f7c-4a61-95df-da2a65a10321">
+          <ID>Amount</ID>
+          <Name>Amount</Name>
+          <SourceColumnID>Amount</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="e71f662a-d6f9-4416-9458-df0dc90caf8a">
+          <ID>Model Region</ID>
+          <Name>Model Region</Name>
+          <SourceColumnID>Model Region</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="a1a5960f-2d44-4ebe-9a11-6c8e343ca62c">
+          <ID>Quantity</ID>
+          <Name>Quantity</Name>
+          <SourceColumnID>Quantity</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="bbdd06a5-11ad-441f-a4f7-f6a29ef95137">
+          <ID>Time Index</ID>
+          <Name>Time Index</Name>
+          <SourceColumnID>Time Index</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+</MiningStructure>

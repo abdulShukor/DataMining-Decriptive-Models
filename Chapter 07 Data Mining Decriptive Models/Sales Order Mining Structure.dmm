@@ -1,0 +1,177 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8c43d8d5-6b96-4d47-a830-202011ed41d1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sales Order Mining Structure</ID>
+  <Name>Sales Order Mining Structure</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_vAssocSeqOrders</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9d6469ab-f53f-4d34-a4e0-77a6beffd974">
+    <DataSourceViewID>Adventure Works DW2012</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1b8db758-6be3-4d19-b572-9b3a5ce39f89">
+      <ID>Income Group</ID>
+      <Name>Income Group</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f01679b1-b425-4229-87d1-97bcc2f34eb6">
+          <DataType>WChar</DataType>
+          <DataSize>8</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="47518e23-3956-4133-84e7-4c1161038050">
+            <TableID>dbo_vAssocSeqOrders</TableID>
+            <ColumnID>IncomeGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7659daae-c240-4521-ba3e-bf231f8063ec">
+      <ID>Order Number</ID>
+      <Name>Order Number</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e1070bd9-5c18-445e-a04f-544102c88797">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2d410793-34ec-49f1-9db7-6e78fcda7f3a">
+            <TableID>dbo_vAssocSeqOrders</TableID>
+            <ColumnID>OrderNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="508f652f-fd67-4e67-a00c-de2d66a7abfb">
+      <ID>Region</ID>
+      <Name>Region</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b07f4fc-fcdd-485e-8633-e226c7c44c8c">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9df6af8b-eb2d-4cb3-9050-31bb8626dba2">
+            <TableID>dbo_vAssocSeqOrders</TableID>
+            <ColumnID>Region</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="1db64f1a-9cad-4362-866f-240611aa67e2">
+      <Annotations>
+        <Annotation>
+          <Name>MDXFilterComponent</Name>
+          <Value></Value>
+        </Annotation>
+      </Annotations>
+      <ID>v Assoc Seq Line Items</ID>
+      <Name>v Assoc Seq Line Items</Name>
+      <ForeignKeyColumns>
+        <ForeignKeyColumn dwd:design-time-name="715f633b-27b5-4710-9c23-2b22f1b597dc">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <NullProcessing>Error</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="944a9c42-8649-4dad-942d-4da6535c9052">
+            <TableID>dbo_vAssocSeqLineItems</TableID>
+            <ColumnID>OrderNumber</ColumnID>
+          </Source>
+        </ForeignKeyColumn>
+      </ForeignKeyColumns>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="470651d7-b087-4d0c-bc96-9dca7a4eb25e">
+          <ID>Model</ID>
+          <Name>Model</Name>
+          <IsKey>true</IsKey>
+          <Type>Text</Type>
+          <Content>Key</Content>
+          <KeyColumns>
+            <KeyColumn dwd:design-time-name="80c554e3-9800-4160-a8a7-3da9b6d81a52">
+              <DataType>WChar</DataType>
+              <DataSize>50</DataSize>
+              <Source xsi:type="ColumnBinding" dwd:design-time-name="d3ffc7ff-4108-4956-bae9-a2604c251fdc">
+                <TableID>dbo_vAssocSeqLineItems</TableID>
+                <ColumnID>Model</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+      </Columns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="662b2d51-69d9-4692-8882-fa0a8db57bd5">
+      <ID>Sales Order Association Rules</ID>
+      <Name>Sales Order Association Rules</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Association_Rules</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="cdd9338d-baa5-4e70-a7bd-e38ade32bd76">
+          <ID>Order Number</ID>
+          <Name>Order Number</Name>
+          <SourceColumnID>Order Number</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="7ec3d632-ae82-4d01-be33-3ad904a68484">
+          <ID>v Assoc Seq Line Items</ID>
+          <Name>v Assoc Seq Line Items</Name>
+          <SourceColumnID>v Assoc Seq Line Items</SourceColumnID>
+          <Usage>Predict</Usage>
+          <Columns>
+            <Column dwd:design-time-name="6347f2a9-369f-4d94-b193-aafeaa30657d">
+              <ID>Model</ID>
+              <Name>Model</Name>
+              <SourceColumnID>Model</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+          </Columns>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+</MiningStructure>
